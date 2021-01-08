@@ -1,72 +1,55 @@
-# django_react_proj
- 
-# Getting Started with Create React App
+# React App + Django API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project consists of two internal projects:
 
-## Available Scripts
+- *students*: the Django project containing the REST API along with all the backend code;
+- *frontend*: the React project with all the Node dependencies, settings and things related to the frontend.
 
-In the project directory, you can run:
+## Run it locally
 
-### `yarn start`
+In order to run the projects locally you need to have Node, npm and `python3` installed on your machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Running the Django project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+First, create a Python virtual environment to isolate the projects:
 
-### `yarn test`
+```bash
+python3 -m venv vitual_env
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then, activate it:
 
-### `yarn build`
+```bash
+source ./virual_env/bin/activate
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`cd` into the _venv_ and clone the project from GitHub:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/PranjulAgarwal/django-react-proj.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Add the Django dependencies:
 
-### `yarn eject`
+```bash
+pip install django djangorestframework django-cors-headers
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Finally, `cd` into the _django-react-proj_ folder and run the project:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+python manage.py runserver
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+That's it!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Access the address http://localhost:8000/api/students/ and check if the API is up.
 
-## Learn More
+### Running the React project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+First, `cd` the _frontend_ directory and run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm install
+npm start
+```
